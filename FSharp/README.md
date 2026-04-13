@@ -117,6 +117,21 @@ All test are ported too and pass.
 
 see [FSharp/Tests/README.md](https://github.com/goswinr/SplayTree/blob/main/FSharp/Tests/README.md) for details on building the Fable output and running the test suite on .NET and JS.
 
+## Benchmarks
+
+The F# port (compiled to JS via Fable) was benchmarked against the original TypeScript implementation.
+Results (JS via Fable vs original TS, run with [Vitest bench](https://github.com/goswinr/SplayTree/blob/main/bench/fsharp.bench.ts)):
+
+| Operation | Winner | Ratio |
+|---|---|---|
+| Insert (x1000) | TS | 1.35× faster than F# |
+| Random read / findStatic (x1000) | TS | 1.37× faster than F# |
+| Remove (x1000) | TS | 1.10× faster than F# |
+| Bulk-add (x1000) to 1000 | F# | 1.67× faster than TS |
+| Bulk-remove-insert (10%) of 10000 | F# | 1.24× faster than TS |
+| Bulk-update (10%) of 10000 | F# | 1.29× faster than TS |
+
+So for single-item operations the original TS is moderately faster, while for bulk operations the F# port is noticeably faster.
 
 ## AI
 

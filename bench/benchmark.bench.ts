@@ -11,7 +11,8 @@ import {
   Tree$2__Load_Z76B293CC as fsharpLoadWithPresort,
   Tree$2__Remove_2B595 as fsharpRemove,
   Tree$2__Update_5BDDA0 as fsharpUpdate,
-} from "../FSharp/Tests/_js/SplayTree.js";
+// } from "../FSharp/Tests/_js/SplayTree.js"; // the fable build
+} from "../FSharp/Tests/dist/splaytree.mjs"; // the fable build packed with vite
 
 function generateRValues(N: number, min = 0, max = N): number[] {
   const map: Record<number, boolean> = {};
